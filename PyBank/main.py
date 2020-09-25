@@ -30,11 +30,17 @@ with open(csvpath, newline = "") as myFile:
 
 #return data for printing
     print('Financial Analysis')
+    print('\n')
     print('----------')
+    print('\n')
     print('Total Months: {}'.format(len(totalMonths)))
+    print('\n')
     print('Net Profit: ${}'.format(net))
+    print('\n')
     print('Average Change: {}'.format(sum(profitDelta)/len(profitDelta)))
+    print('\n')
     print('Greatest Increase: {} (${})'.format((monthDate[greatestIncrease]),(max(profitDelta))))
+    print('\n')
     print('Greatest Decrease: {} (${})'.format((monthDate[greatestDecrease]),(min(profitDelta))))
 
 #export text file
@@ -43,10 +49,16 @@ output = os.path.join('.','Analysis','budget_data_analysis.txt')
 with open(output,"w", newline = "") as textFile:
     writer = csv.writer(textFile)
     textFile.write('Financial Analysis')
+    textFile.write('\n')
     textFile.write('----------')
+    textFile.write('\n')
     textFile.write('Total Months: {}'.format(len(totalMonths)))
+    textFile.write('\n')
     textFile.write('Net Profit: ${}'.format(net))
+    textFile.write('\n')
     textFile.write('Average Change: {}'.format(sum(profitDelta)/len(profitDelta)))
+    textFile.write('\n')
     textFile.write('Greatest Increase: {} (${})'.format((monthDate[greatestIncrease]),(max(profitDelta))))
+    textFile.write('\n')
     textFile.write('Greatest Decrease: {} (${})'.format((monthDate[greatestDecrease]),(min(profitDelta))))
     

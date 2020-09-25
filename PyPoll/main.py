@@ -28,12 +28,18 @@ with open(csvpath, newline = "") as myFile:
 
 #return data for printing
     print('Election Results')
+    print('\n')
     print('----------')
+    print('\n')
     print('Total Number of Votes: {}'.format(len(votesCast)))
+    print('\n')
     print('----------')
+    print('\n')
     for candidate in names:
         print('{}: {:.3f}% ({})'.format(candidate,(candidateVotes.count(candidate)/len(votesCast))*100,candidateVotes.count(candidate)))
+    print('\n')
     print('----------')
+    print('\n')
     print('Winner: {}'.format(electionResults(candidateVotes)))
 
 #export text file
@@ -42,10 +48,15 @@ output = os.path.join('.','Analysis','election_data_analysis.txt')
 with open(output,"w", newline = "") as textFile:
     writer = csv.writer(textFile)
     textFile.write('Election Results')
+    textFile.write('\n')
     textFile.write('----------')
+    textFile.write('\n')
     textFile.write('Total Number of Votes: {}'.format(len(votesCast)))
+    textFile.write('\n')
     textFile.write('----------')
+    textFile.write('\n')
     for candidate in names:
-        textFile.write('{}: {:.3f}% ({})'.format(candidate,(candidateVotes.count(candidate)/len(votesCast))*100,candidateVotes.count(candidate)))
+        textFile.write('{}: {:.3f}% ({})\n'.format(candidate,(candidateVotes.count(candidate)/len(votesCast))*100,candidateVotes.count(candidate)))
     textFile.write('----------')
+    textFile.write('\n')
     textFile.write('Winner: {}'.format(electionResults(candidateVotes)))
